@@ -1,0 +1,5 @@
+{
+  // Sometimes, typescript will complain about having module alias configuration
+  // Use a separate config file to avoid it and easier to manage
+  "extends": "./tsconfig.extends.json"
+}

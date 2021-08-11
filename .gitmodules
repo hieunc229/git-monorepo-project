@@ -1,0 +1,6 @@
+[submodule "src/packages/module2"]
+	path = src/packages/module2
+	url = https://github.com/hieunc229/git-monorepo-module2.git
+[submodule "src/packages/module1"]
+	path = src/packages/module1
+	url = https://github.com/hieunc229/git-monorepo-module1.git
