@@ -15,7 +15,7 @@ This is an example of a project using monorepo approach with git.
 
 Check out the details about [How to setup monorepo with Git for TypeScript and JavaScript](https://inverr.com/blog/setup-git-monorepo-for-javascript-typescript)
 
-## How to install this project
+## 1. How to install this project
 
 
 Basically, this repository is a project, importing Module 1 and Module 2 which are submodules. To install and try this example:
@@ -53,36 +53,50 @@ Speak from Module1
 Speak from Module2
 ```
 
-## Project structures
+## 2. Add a new dependency
 
-```
-project-root/
-    ├── .gitsubmodules
-    ├── package.json
-    ├── tsconfig.json
-    ├── webpack.config.js
-    └── src/
-        ├── index.ts
-        ├── packages/
-        │   ├── module1 (submodule)/ 
-        │   │   ├── package.json
-        │   │   └── src/
-        │   │       └── index.ts
-        │   ├── module2 (submodule)/
-        │   │   └── index.ts
-        │   └── ...
-        └── ...
-```
+To add a new dependency, make sure to push it to a git repository.
 
-Related repositories:
-- module1: https://github.com/hieunc229/git-monorepo-module1/tree/1e5428b4d7d1b646ee0274b5b2e1ae37498e3041
-- module2: https://github.com/hieunc229/git-monorepo-module2/tree/ec53f2dee840403edfbec1218ac39b10faa18587
-
----
-
-## Adding a new submodule
-
-Using the following command to add a new submodule
+1. Add the dependency as a submodule under **src/packages**. For example:
 ```ssh
 $ git submodule add https://github.com/username/module-name src/packages/module-name 
 ```
+
+2. Configure module alias
+
+**For JavaScripts**, add a new alias to the **resolve.alias** property in the **webpack.config.js** file. For React apps created with [CRA](https://inverr.com/blog/%7Bhttps://create-react-app.dev), use [react-app-rewired](https://inverr.com/blog/%7Bhttps://www.npmjs.com/package/react-app-rewired) to override the webpack configurations.
+
+For example:
+```js
+module.exports = {
+    …,
+    resolve: {
+        alias: {
+            ...
+
+            // import Module1 from “module1”
+            "module-name": "path/to/src/packages/module-name",
+        }
+    }
+}  
+```
+**For TypeScript**, add a new alias to the **compilerOptions.paths** in the **tsconfig.extends.json** file.
+
+For example:
+
+```json
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            // import Module1 from “module1”
+            "module-name": "packages/module-name",
+            "module-name/*": "packages/module-name/*",
+        }
+    }
+}
+```
+
+3. Feedback or Question
+
+Feel free to [create a thread](https://github.com/hieunc229/git-monorepo-project/issues/new) for question or feedback
