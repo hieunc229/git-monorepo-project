@@ -1,0 +1,30 @@
+{
+  "name": "git-monorepo-project",
+  "version": "1.0.0",
+  "description": "Monorepo example",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hieunc229/git-monorepo-project.git"
+  },
+  "keywords": [
+    "monorepo",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Hieu C. Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hieunc229/git-monorepo-project/issues"
+  },
+  "homepage": "https://github.com/hieunc229/git-monorepo-project#readme",
+  "devDependencies": {
+    "ts-node": "^10.2.0",
+    "tsconfig-paths": "^3.10.1",
+    "typescript": "^4.3.5"
+  }
+}

@@ -1,14 +1,12 @@
 {
     "compilerOptions": {
-      "baseUrl": "./src",
+      "isolatedModules": false,
+      "baseUrl": "./src/",
       "paths": {
 
-        // Module alias for ui
         "@module1": ["packages/module1/src"],
         "@module1/*": ["packages/module1/src/*"],
 
-        // Module alias for any directory under src/modules
-        // For example @modules/types
         "@packages": ["packages"],
         "@packages/*": ["packages/*"],
       }
