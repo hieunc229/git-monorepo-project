@@ -89,7 +89,6 @@ For example:
     "compilerOptions": {
         "baseUrl": "./src",
         "paths": {
-            // import Module1 from “module1”
             "module-name": "packages/module-name",
             "module-name/*": "packages/module-name/*",
         }
@@ -97,6 +96,6 @@ For example:
 }
 ```
 
-3. Feedback or Question
+## 3. Feedback or Question
 
 Feel free to [create a thread](https://github.com/hieunc229/git-monorepo-project/issues/new) for question or feedback
